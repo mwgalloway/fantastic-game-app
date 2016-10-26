@@ -25,6 +25,12 @@ describe UserGame do
       library.valid?
       expect(library.errors).to_not be_empty
     end
+
+    it 'must be a unique game in the scope of a single category' do
+      library = UserGame.create(user_id: 1, game_id: 1)
+      duplicate = UserGame.new(user_id: 1, game_id: 1)
+      expect(duplicate.valid?).to eq false
+    end
   end
 
   describe "associations" do
