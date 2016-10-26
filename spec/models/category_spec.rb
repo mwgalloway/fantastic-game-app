@@ -13,7 +13,13 @@ describe Category do
     it "has a unique name" do
       category.save
       duplicate = Category.create(name: "Bluffing")
-      expect(duplicate.errors).to_not be_empty
+      expect(duplicate.valid?).to eq false
+    end
+
+    it "must have a name" do
+      new_category = Category.create
+      expect(new_category.valid?).to eq false
     end
   end
+
 end
