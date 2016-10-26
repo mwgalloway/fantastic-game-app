@@ -35,9 +35,17 @@ describe Comment do
   end
 
   describe "associations" do
-    let(:user) { User.new(username: "ada_lovelace", email: "a.turing@dbc.com", password: "1234")}
-    let(:comment) { Comment.new }
+    let(:user) { User.new(username: "ada_lovelace", email: "a.turing@dbc.com", password: "1234") }
+    let(:game) { Game.new(name: "Yatzee", duration: "600 mins", max_players: 10, min_players: 5, description: "fun game", popularity: 10) }
+    let(:comment) { Comment.new(user_id: (:user).id, game_id: (:game).id), content: "omg, so boring." }
+
     it "points to a user that authored the comment" do
+      expect(comment.user).to eq :user
+    end
+
+     it "points to the game the comment is about" do
+      expect(comment.game).to eq :game
+    end
 
     end
   end
