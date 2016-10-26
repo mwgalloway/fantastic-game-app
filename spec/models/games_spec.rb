@@ -77,7 +77,7 @@ describe Game do
 
   describe "ensures uniqueness of attributes" do
     context "validates uniqueness" do
-      it "is valid when another game has the same name" do
+      it "is valid when another game has a different name" do
         game.save
         new_game = Game.new(name: "Checkers", min_players: 2, max_players: 4, duration: 30, description: "A really fun and cool game to play when you are super bored and that you can relate to that", img_url: "https://www.googling.com/index", popularity: 80)
 
