@@ -47,6 +47,4 @@ describe User do
       expect(invalid_user.save).to be false
     end
   end
-
-
 end
