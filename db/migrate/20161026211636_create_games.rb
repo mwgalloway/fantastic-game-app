@@ -5,7 +5,7 @@ class CreateGames < ActiveRecord::Migration
       t.integer :min_players
       t.integer :max_players
       t.integer :duration
-      t.string :description
+      t.text :description
       t.string :img_url
       t.integer :popularity
 
