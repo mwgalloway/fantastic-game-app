@@ -3,4 +3,7 @@ class User < ActiveRecord::Base
 
   validates :username, :email, :password_digest, presence: true
   validates :username, :email, uniqueness: true
+
+  has_many :user_games
+  has_many :games, through: :user_games
 end

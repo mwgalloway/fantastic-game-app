@@ -1,8 +1,10 @@
 require 'rails_helper'
 
 describe User do
-  let (:user) { User.new(username: "username", email: "email@email.com", password: "password") }
+  let (:user) { User.find_by(id: 1) || User.create(username: "username", email: "email@email.com", password: "password") }
   let (:invalid_user) { User.new }
+
+  let(:game) { Game.where(name: "Parcheesi", min_players: 2, max_players: 4, duration: 30, description: "A really fun and cool game to play when you are super bored", img_url: "https://www.google.com", popularity: 80).first_or_create }
 
   describe ".username" do
     it "has a readable username" do
@@ -55,7 +57,7 @@ describe User do
       end
 
       it "can have games added" do
-        user.games << Game.new
+        user.games << game
         expect(user.games.count).to eq 1
         expect(user.games.first).to be_a_kind_of(Game)
       end
