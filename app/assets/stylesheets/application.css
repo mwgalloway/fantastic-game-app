@@ -18,17 +18,23 @@
 /*  margin: 0;*/
  }
  .img-show {
-  width: 200px;
+  width: 300px;
   float: left;
   margin-right: 20px;
  }
 
  .img-thumb {
-  width: 80px;
+  width: 150px;
+  float: left;
+  margin-right: 10px;
  }
 
 body {
   background-color: #778899;
+}
+
+.game {
+  max-width: 900px;
 }
 
 main {
@@ -41,7 +47,39 @@ main {
   padding-top: 10px;
   border-top: thick double #073642;
   list-style-type: none;
+}
 
+.games-list {
+  max-width: 800px;
+  margin-top: 20px;
+  color: #93a1a1;
+}
+.players {
+  font-weight: bold;
+}
+
+.games-list a {
+    color: #2aa198;
+}
+
+.game-item {
+  margin-top: 30px;
+  padding: 20px;
+  overflow: auto;
+}
+
+.game-item {
+
+  background-color: #1B374F;
+}
+
+.game-text {
+  overflow: auto;
+}
+
+.game-text h3{
+  margin: 0;
+  margin-bottom: 10px;
 }
 
 .description {
