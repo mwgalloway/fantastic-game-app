@@ -1,4 +1,12 @@
 <h1>Register a New Account</h1>
+  <% if @user.errors.any? %>
+    <h3>Something went wrong:</h3>
+    <ul>
+      <% @user.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
   <%= form_for @user do |f| %>
     <div>
       <%= f.label :username %><br>

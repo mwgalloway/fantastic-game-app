@@ -26,7 +26,10 @@ describe UsersController do
     end
 
     context "when invalid params are passed" do
-
+      it "renders the :new template again" do
+        post :create, { user: { username: "username", email: "email@email.com", password: "password", password_confirmation: "password" }}
+        expect(response).to render_template(:new)
+      end
     end
   end
 end
