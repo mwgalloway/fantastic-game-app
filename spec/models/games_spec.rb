@@ -105,4 +105,18 @@ describe Game do
 
     end
   end
+
+  describe "associations" do
+    context "users" do
+      it "has many users" do
+        expect(game.users).to be_a_kind_of(ActiveRecord::Relation)
+      end
+
+      it "can have users added" do
+        user = User.create(username: "username", email: "email@email.com", password: "password")
+        game.users << user
+        expect(game.users.first).to be_a_kind_of(User)
+      end
+    end
+  end
 end
