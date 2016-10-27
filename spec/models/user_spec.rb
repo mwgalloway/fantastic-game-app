@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 describe User do
-  let (:user) { User.find_by(id: 1) || User.create(username: "username", email: "email@email.com", password: "password") }
+
+  let (:user) { User.new(username: "username", email: "email@email.com", password: "password") }
   let (:invalid_user) { User.new }
 
   let(:game) { Game.where(name: "Parcheesi", min_players: 2, max_players: 4, duration: 30, description: "A really fun and cool game to play when you are super bored", img_url: "https://www.google.com", popularity: 80).first_or_create }
