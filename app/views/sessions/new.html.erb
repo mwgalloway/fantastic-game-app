@@ -1,0 +1,11 @@
+<h3> Login </h3>
+
+<%= @error if @error %>
+
+<%= form_tag sessions_path do %>
+  <%= label_tag(:username) %><br>
+  <%= text_field_tag(:username) %><br>
+  <%= label_tag(:password) %><br>
+  <%= password_field_tag(:password) %><br>
+  <%= submit_tag("Login") %>
+<% end %>
