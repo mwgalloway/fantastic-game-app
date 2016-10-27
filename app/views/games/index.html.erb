@@ -1,0 +1,8 @@
+<h1>Fantastic Games</h1>
+
+<% @games.each do |game| %>
+  <%= image_tag game.img_url, class: "img-thumb" %>
+  <h3><%= link_to game.name, game %></h3>
+  <p><%= game.min_players %> to <%= game.max_players %> players</p>
+  <p><%= truncate(game.description, length 100) %></p>
+<% end %>
