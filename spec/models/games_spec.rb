@@ -123,6 +123,8 @@ describe Game do
 
     context "categories" do
       it { should have_many(:categories).through(:categorizations) }
+
+      it { should have_many(:comments) }
     end
   end
 end
