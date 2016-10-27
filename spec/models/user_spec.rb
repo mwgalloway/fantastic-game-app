@@ -52,15 +52,7 @@ describe User do
 
   describe "associations" do
     context "games" do
-      it "has a library of games" do
-        expect(user.games).to be_a_kind_of(ActiveRecord::Relation)
-      end
-
-      it "can have games added" do
-        user.games << game
-        expect(user.games.count).to eq 1
-        expect(user.games.first).to be_a_kind_of(Game)
-      end
+      it { should have_many(:games).through(:user_games) }
     end
   end
 end
