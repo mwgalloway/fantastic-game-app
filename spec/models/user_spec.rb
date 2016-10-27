@@ -65,6 +65,7 @@ describe User do
       it { should have_many(:inverse_friendships) }
       it "should have many friends" do
         user2 = User.create(username: "something", email: "something@something.com", password: "password")
+        user.save
         user.friendships.create(friend: user2, confirmed: true)
         expect(user.friends.first).to eq user2
       end
