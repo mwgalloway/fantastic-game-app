@@ -1,0 +1,14 @@
+
+<section class="game">
+  <h2><%= @game.name %></h2>
+  <%= image_tag @game.img_url, class: "img-show" %>
+  <ul class="game-details">
+    <li>Average duration: <%= @game.view_duration %> </li>
+    <li>Players: <%= @game.min_players %> to <%= @game.max_players %></li>
+    <li>Top 50 Rank: <%= @game.popularity %> </li>
+  </ul>
+  <div class="description">
+    <%= @game.view_description %>
+  </div>
+</section>
+
