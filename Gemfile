@@ -47,6 +47,7 @@ end
 
 group :test do
   gem 'shoulda'
+  gem 'database_cleaner'
 end
 
 group :development do
