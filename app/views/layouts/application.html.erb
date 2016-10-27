@@ -3,9 +3,22 @@
 <head>
   <title>FantasticGameApp</title>
   <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag "application", media: "all" %>
 </head>
 <body>
+<header>
+  <h1 class="site-title">FUN GAMES</h1>
+  <ul>
+    <% if !logged_in? %>
+      <li><%= link_to "register", new_user_path %></li>
+      <li><%= link_to "log in", new_session_path %></li>
+    <% else %>
+      <li><%= link_to "profile page", current_user %></li>
+      <li><%= link_to "log out", "/logout", method: :delete %></li>
+    <% end %>
+  </ul>
+</header>
 
 <%= yield %>
 
