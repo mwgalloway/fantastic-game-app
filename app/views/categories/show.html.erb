@@ -1,11 +1,7 @@
-<h1>Fantastic Games!</h1>
-
-<div class="view-categories">
-  <%= link_to 'View all Categories', categories_path %>
-</div>
+<h1>Games in <%= @category.name %>:</h1>
 
 <div class="games-list">
-  <% @games.each do |game| %>
+  <% @category.games.each do |game| %>
     <div class="game-item">
       <%= image_tag game.img_url, class: "img-thumb" %>
         <div class="game-text">
