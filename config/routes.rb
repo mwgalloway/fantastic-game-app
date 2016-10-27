@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, except: [:destroy]
   resources :games
+  resources :categories
 
   delete '/sessions' => "sessions#destroy"
   # The priority is based upon order of creation: first created -> highest priority.
