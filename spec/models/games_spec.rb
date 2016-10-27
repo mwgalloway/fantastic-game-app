@@ -3,6 +3,7 @@ require 'rails_helper'
 describe Game do
   let(:game) { Game.new(name: "Parcheesi", min_players: 2, max_players: 4, duration: 30, description: "A really fun and cool game to play when you are super bored", img_url: "https://www.google.com", popularity: 80) }
 
+
   # describe ".recent" do
   #   it "shows the most recent games" do
   #     game.user_throw = "paper"
@@ -79,6 +80,7 @@ describe Game do
     context "validates uniqueness" do
       it "is valid when another game has a different name" do
         game.save
+        p game
         new_game = Game.new(name: "Checkers", min_players: 2, max_players: 4, duration: 30, description: "A really fun and cool game to play when you are super bored and that you can relate to that", img_url: "https://www.googling.com/index", popularity: 80)
 
         expect(new_game.valid?).to eq true
@@ -103,6 +105,33 @@ describe Game do
         expect(new_game.valid?).to eq false
       end
 
+    end
+  end
+
+  describe "associations" do
+    context "users" do
+      it "has many users" do
+        expect(game.users).to be_a_kind_of(ActiveRecord::Relation)
+      end
+
+      it "can have users added" do
+        user = User.first || User.create(username: "username", email: "email@email.com", password: "password")
+        game.users << user
+        expect(game.users.first).to be_a_kind_of(User)
+      end
+    end
+
+    context "categories" do
+      it "has many categories" do
+        expect(game.categories).to be_a_kind_of(ActiveRecord::Relation)
+      end
+
+      xit "can have categories added" do
+        category = Category.first || Category.create(name: "Strategy")
+
+        game
+        expect(game.categories.first).to be_an_instance_of(Category)
+      end
     end
   end
 end

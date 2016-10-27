@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Comment do
   let(:comment) { Comment.new }
   let(:user) { User.new(username: "ada_lovelace", email: "a.turing@dbc.com", password: "1234") }
-  let(:game) { Game.new(name: "Yatzee", duration: "600 mins", max_players: 10, min_players: 5, description: "fun game", popularity: 10) }
+  let(:game) { Game.new(name: "Yatzee", duration: 600, max_players: 10, min_players: 5, description: "fun game", popularity: 10) }
 
   describe "validations" do
     it "is valid when a user, a game and content is present" do
@@ -37,12 +37,16 @@ describe Comment do
   end
 
    describe "associations" do
-    xit "points to a user that authored the comment" do
-      expect(comment.user).to eq :user
+    it "points to a user that authored the comment" do
+      comment.user = user
+      comment.game = game
+      expect(comment.user).to eq user
     end
 
-     xit "points to the game the comment is about" do
-      expect(comment.game).to eq :game
+     it "points to the game the comment is about" do
+      comment.user = user
+      comment.game = game
+      expect(comment.game).to eq game
     end
   end
 

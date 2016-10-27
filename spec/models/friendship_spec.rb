@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 describe Friendship do
-  let(:friendship) { Friendship.new( user1_id: 1, user2_id: 2 ) }
+  let(:friendship) { Friendship.new( user_id: 1, friend_id: 2 ) }
 
-  context ".user1_id" do
+  context ".user_id" do
     it "has a readable attribute" do
-      expect(friendship.user1_id).to eq 1
+      expect(friendship.user_id).to eq 1
     end
 
     it "is necessary to be saved" do
@@ -13,14 +13,14 @@ describe Friendship do
     end
 
     it "cannot be saved if not present" do
-      friendship.user1_id = nil
+      friendship.user_id = nil
       expect(friendship.save).to be false
     end
   end
 
-  context ".user2_id" do
+  context ".friend_id" do
     it "has a readable attribute" do
-      expect(friendship.user2_id).to eq 2
+      expect(friendship.friend_id).to eq 2
     end
 
     it "is necessary to be saved" do
@@ -28,7 +28,7 @@ describe Friendship do
     end
 
     it "cannot be saved if not present" do
-      friendship.user2_id = nil
+      friendship.friend_id = nil
       expect(friendship.save).to be false
     end
 
@@ -36,12 +36,12 @@ describe Friendship do
 
   context ".confirmed" do
     it "defaults to pending" do
-      expect(friendship.confirmed).to eq "pending"
+      expect(friendship.confirmed).to eq false
     end
 
     it "can be changed" do
-      friendship.confirmed = "false"
-      expect(friendship.confirmed).to eq "false"
+      friendship.confirmed = true
+      expect(friendship.confirmed).to eq true
     end
   end
 

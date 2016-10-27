@@ -34,12 +34,12 @@ describe UserGame do
   end
 
   describe "associations" do
-    xit "points to the user it belongs to" do
-      library.user_id = user
+    it "points to the user it belongs to" do
+      library.user = user
       library.game = game
       expect(library.user).to eq user
     end
-    xit "points to the game it belongs to" do
+    it "points to the game it belongs to" do
       library.user = user
       library.game = game
       expect(library.game).to eq game
