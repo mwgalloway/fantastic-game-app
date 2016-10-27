@@ -37,17 +37,8 @@ describe Comment do
   end
 
    describe "associations" do
-    it "points to a user that authored the comment" do
-      comment.user = user
-      comment.game = game
-      expect(comment.user).to eq user
-    end
-
-     it "points to the game the comment is about" do
-      comment.user = user
-      comment.game = game
-      expect(comment.game).to eq game
-    end
+    it { should belong_to(:game) }
+    it { should belong_to(:user) }
   end
 
 end

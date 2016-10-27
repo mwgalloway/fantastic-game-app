@@ -22,4 +22,8 @@ describe Category do
     end
   end
 
+  describe "associations" do
+    it { should have_many(:games).through(:categorizations) }
+  end
+
 end
