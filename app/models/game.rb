@@ -11,4 +11,8 @@ class Game < ActiveRecord::Base
   has_many :categories, through: :categorizations
 
   has_many :comments
+
+  def view_description
+    self.description.gsub(/&#10;/, ' ').gsub(/&nbsp;/, ' ')
+  end
 end
