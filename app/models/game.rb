@@ -15,4 +15,14 @@ class Game < ActiveRecord::Base
   def view_description
     self.description.gsub(/&#10;/, ' ').gsub(/&nbsp;/, ' ')
   end
+
+  def duration_to_s
+    if self.duration / 60 == 0
+      "#{self.duration} minutes"
+    elsif self.duration / 60 == 1
+      "1 hours"
+    else
+      "#{self.duration / 60} hours"
+    end
+  end
 end
