@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe User do 
+describe User do
   let (:user) { User.new(username: "username", email: "email@email.com", password: "password") }
   let (:invalid_user) { User.new }
 
@@ -25,12 +25,12 @@ describe User do
       expect(user.email).to eq "email@email.com"
     end
 
-    it "is valid when it is not empty" do 
+    it "is valid when it is not empty" do
       user.valid?
       expect(user.errors[:email]).to be_empty
     end
 
-    it "is invalid when it is empty" do 
+    it "is invalid when it is empty" do
       invalid_user.valid?
       expect(invalid_user.errors[:email]).to_not be_empty
     end
