@@ -9,4 +9,6 @@ class GamesController < ApplicationController
     @comment = Comment.new
     @comment.game_id = @game.id
   end
+
+
 end
