@@ -1,0 +1,30 @@
+<h1>Register a New Account</h1>
+  <% if @user.errors.any? %>
+    <h3>Something went wrong:</h3>
+    <ul>
+      <% @user.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <%= form_for @user do |f| %>
+    <div>
+      <%= f.label :username %><br>
+      <%= f.text_field :username %>
+    </div>
+    <div>
+      <%= f.label :email %><br>
+      <%= f.email_field :email %>
+    </div>
+    <div>
+      <%= f.label :password %><br>
+      <%= f.password_field :password %>
+    </div>
+    <div>
+      <%= f.label :password_confirmation %><br>
+      <%= f.password_field :password_confirmation %>
+    </div><br>
+    <div>
+      <%= f.submit "register" %>
+    </div>
+  <% end %>
