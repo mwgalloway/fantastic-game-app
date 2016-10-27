@@ -31,7 +31,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'pry'
 gem 'bgg'
 
 group :development, :test do
@@ -42,6 +42,12 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'simplecov', :require => false
+  gem 'shoulda-matchers'
+end
+
+group :test do
+  gem 'shoulda'
+  gem 'database_cleaner'
 end
 
 group :development do
