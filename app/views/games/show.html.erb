@@ -1,5 +1,5 @@
 <% if current_user && current_user.games.include?(@game) %>
-  <%= button_to 'Delete this game from your library', library_path(@game_id) %>
+  <%= button_to('Delete this game from your library', library_path(@game.id), method: "delete", data: { confirm: "Are you sure?" }) %>
 <% else %>
   <%= button_to 'Add this game to your library', libraries_path(game_id: @game.id) %>
 <% end %>
