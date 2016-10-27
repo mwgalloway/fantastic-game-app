@@ -1,0 +1,15 @@
+<h1 class="page-header"><%= @user.username %></h1>
+<ul class="user-info">
+  <li>member since <%= time_ago_in_words(@user.created_at) %> ago</li>
+  <li>total games in library: <%= @user.games.count %></li>
+</ul>
+<div id="add-friendship">
+
+</div>
+  <ul class="library">
+    <% @user.games.each do |game| %>
+      <li class="lib-name"><%= game.name %></li>
+      <li class="lib-thumb"><%= link_to image_tag(game.img_url), game %></li>
+    <% end %>
+  </ul>
+
