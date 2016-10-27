@@ -54,5 +54,9 @@ describe User do
     context "games" do
       it { should have_many(:games).through(:user_games) }
     end
+
+    context "comments" do
+      it { should have_many(:comments) }
+    end
   end
 end
