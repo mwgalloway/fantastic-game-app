@@ -9,7 +9,7 @@ To create a fun and easy-to-use online hub for board enthusiasts where they can 
 
 
 ##Dependencies
-Ruby 2.0.0
+Ruby 2.0.0-p647
 Rails 4.2.5
 
 Gems:
