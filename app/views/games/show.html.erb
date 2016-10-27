@@ -1,3 +1,8 @@
+<% if current_user && current_user.games.include?(@game) %>
+  <%= button_to 'Delete this game from your library', library_path(@game_id) %>
+<% else %>
+  <%= button_to 'Add this game to your library', libraries_path(game_id: @game.id) %>
+<% end %>
 
 <section class="game">
   <%= image_tag @game.img_url, class: "img-show" %>
