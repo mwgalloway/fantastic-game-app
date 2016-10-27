@@ -122,16 +122,7 @@ describe Game do
     end
 
     context "categories" do
-      it "has many categories" do
-        expect(game.categories).to be_a_kind_of(ActiveRecord::Relation)
-      end
-
-      xit "can have categories added" do
-        category = Category.first || Category.create(name: "Strategy")
-
-        game
-        expect(game.categories.first).to be_an_instance_of(Category)
-      end
+      it { should have_many(:categories).through(:categorizations) }
     end
   end
 end
