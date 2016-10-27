@@ -5,15 +5,15 @@
 <% end %>
 
 <section class="game">
-  <h2><%= @game.name %></h2>
   <%= image_tag @game.img_url, class: "img-show" %>
-  <ul class="game-details">
-    <li>Average duration: <%= @game.view_duration %> </li>
-    <li>Players: <%= @game.min_players %> to <%= @game.max_players %></li>
-    <li>Top 50 Rank: <%= @game.popularity %> </li>
-  </ul>
+  <h2><%= @game.name %></h2>
   <div class="description">
     <%= @game.view_description %>
   </div>
+  <ul class="game-details">
+    <li>Average duration: <%= @game.view_duration %> </li>
+    <li>Players: <%= @game.min_players %> to <%= @game.max_players %> </li>
+    <li>Top 50 rank: <%= @game.popularity %> </li>
+  </ul>
 </section>
 
