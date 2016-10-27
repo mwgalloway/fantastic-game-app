@@ -8,4 +8,7 @@ class User < ActiveRecord::Base
   has_many :games, through: :user_games
 
   has_many :comments
+
+  has_many :friendships
+  has_many :friends
 end

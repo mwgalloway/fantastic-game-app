@@ -58,5 +58,9 @@ describe User do
     context "comments" do
       it { should have_many(:comments) }
     end
+
+    context "friends" do
+      it { should have_many(:friends).through(:friendships)}
+    end
   end
 end
