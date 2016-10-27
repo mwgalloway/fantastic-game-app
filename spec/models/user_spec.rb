@@ -60,7 +60,13 @@ describe User do
     end
 
     context "friends" do
-      it { should have_many(:friends).through(:friendships)}
+      it { should have_many(:friendships) }
+      it { should have_many(:inverse_friendships) }
+      it "should have many friends" do
+        user2 = User.create(username: "something", email: "something@something.com", password: "password")
+        user.friendships.create(friend: user2, confirmed: true)
+        expect(user.friends.first).to eq user2
+      end
     end
   end
 end
