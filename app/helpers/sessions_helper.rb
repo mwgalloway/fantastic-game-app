@@ -11,7 +11,7 @@ module SessionsHelper
     redirect_to '/login' unless logged_in?
   end
 
-  def user_is_owner(owner_id)
-    current_user.id == owner_id if logged_in?
-  end
+  # def user_is_owner(owner_id)
+  #   current_user.id == owner_id if logged_in?
+  # end
 end
