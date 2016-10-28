@@ -93,11 +93,17 @@ main {
 }
 
 #nav {
-  margin:0;
-  padding:10px;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  margin: 0px;
+  border-bottom: 2px solid black;
+  padding: 10px;
   list-style: none;
   background-color: #6c71c4;
   font-size: 16pt;
+  box-shadow: 5px 5px 15px #000;
 }
 
 .title{
@@ -119,8 +125,6 @@ main {
   padding-left: 10px;
   padding-right: 10px;
 }
-
-
 
 .game-details li:nth-child(2) {
   border-right: solid 2px #073642;
