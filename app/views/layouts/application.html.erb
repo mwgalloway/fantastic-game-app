@@ -20,6 +20,9 @@
     <% end %>
   </div>
 </header>
+<div class="sidebar">
+  <%= render "categories/index"  %>
+</div>
 
 <% if flash[:error_object] %>
   <section class="errors">
