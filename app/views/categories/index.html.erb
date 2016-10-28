@@ -1,12 +1,10 @@
-<h1>Fantastic Categories!</h1>
+<h1 class="login-header">Fantastic Categories!</h1>
 
 <h2>Select a Category</h2>
-<div class="categories-list">
-  <ul>
+<div>
+  <ul id="categories-list">
     <% @categories.each do |category| %>
-      <div class="category-text">
-        <li><%= link_to category.name, category %></li>
-      </div>
+        <li><%= link_to category.name, category %></li><br>
     <% end %>
   </ul>
 </div>

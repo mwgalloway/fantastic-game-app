@@ -1,35 +1,39 @@
-<% if current_user && current_user.games.include?(@game) %>
-  <%= button_to('Delete this game from your library', library_path(@game.id), method: "delete", data: { confirm: "Are you sure?" }) %>
-<% else %>
-  <%= button_to 'Add this game to your library', libraries_path(game_id: @game.id) %>
-<% end %>
+<div class="games-list">
+  <div class="show">
+    <% if current_user && current_user.games.include?(@game) %>
+      <%= button_to('Delete this game from your library', library_path(@game.id), method: "delete", data: { confirm: "Are you sure?" }) %>
+    <% else %>
+      <%= button_to 'Add this game to your library', libraries_path(game_id: @game.id) %>
+    <% end %>
 
-<section class="game">
-  <%= image_tag @game.img_url, class: "img-show" %>
-  <h2><%= @game.name %></h2>
-  <div class="description">
-    <%= @game.view_description %>
+    <section class="game">
+      <%= image_tag @game.img_url, class: "img-show" %>
+      <h2><%= @game.name %></h2>
+      <div class="description">
+        <%= @game.view_description %>
+      </div>
+      <ul class="game-details">
+        <li>Average duration: <%= @game.view_duration %> </li>
+        <li>Players: <%= @game.min_players %> to <%= @game.max_players %> </li>
+        <li>Top 50 rank: <%= @game.popularity %> </li>
+      </ul>
+    </section>
+    <table id="show-table">
+      <tr>
+        <th colspan="<%= @game.categories.length %>">Categories:</th>
+      </tr>
+      <tr>
+        <% @game.categories.each do |category| %>
+          <td><%= link_to category.name, category %></td>
+        <% end %>
+      </tr>
+    </table><hr>
+
+    <section class="comments">
+      <%= render @game.comments %><hr>
+      <%= render partial: 'comments/form' %>
+    </section><hr>
   </div>
-  <ul class="game-details">
-    <li>Average duration: <%= @game.view_duration %> </li>
-    <li>Players: <%= @game.min_players %> to <%= @game.max_players %> </li>
-    <li>Top 50 rank: <%= @game.popularity %> </li>
-  </ul>
-  <table>
-    <tr>
-      <th colspan="<%= @game.categories.length %>">Categories:</th>
-    </tr>
-    <tr>
-      <% @game.categories.each do |category| %>
-        <td><%= link_to category.name, category %></td>
-      <% end %>
-    </tr>
-  </table>
-</section>
-
-<section class="comments">
-  <%= render partial: 'comments/form' %>
-  <%= render @game.comments %>
-</section>
+</div>
 
 

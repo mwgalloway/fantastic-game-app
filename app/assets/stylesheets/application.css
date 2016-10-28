@@ -13,24 +13,36 @@
  *= require_tree .
  *= require_self
  */
+html {
+  background: #333;
+}
 
- h2 {
+h2 {
 /*  margin: 0;*/
- }
- .img-show {
+}
+
+.img-show {
   width: 300px;
   float: left;
   margin-right: 20px;
- }
+  margin-bottom: 10px;
+}
 
- .img-thumb {
+.img-thumb {
   width: 150px;
   float: left;
   margin-right: 10px;
- }
+  margin-bottom: 10px;
+  display: inline-block;
+}
 
 body {
   background-color: #778899;
+  max-width: 80%;
+  margin: 80px auto 0px auto;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px #000;
 }
 
 .game {
@@ -44,38 +56,51 @@ main {
 }
 
 .game-details {
-  padding-top: 10px;
+  /*padding-top: 10px;*/
   border-top: thick double #073642;
   list-style-type: none;
+  text-align: center;
+  padding: 0;
 }
 
 .games-list {
-  max-width: 800px;
-  margin-top: 20px;
-  color: #93a1a1;
+  width: 80%;
+  margin: 20px auto 0px auto;
+  color: #000;
 }
+
 .players {
   font-weight: bold;
 }
 
 .games-list a {
-    color: #2aa198;
+  color: #2aa198;
+}
+
+.games-list .show a {
+  color: #2c3184;
+}
+
+.view-categories a {
+  color: black;
+}
+
+.view-categories a:hover {
+  color: pink;
 }
 
 .game-item {
+  background-color: #1B374F;
   border: thick solid #002b36;
-  margin-top: 30px;
+  margin: 15px auto;
   padding: 20px;
   overflow: auto;
+  min-width: 70%;
 }
 
-.game-item {
-
-  background-color: #1B374F;
-}
-
-.game-text {
+.game-text p, .game-text span {
   overflow: auto;
+  color: #93a1a1;
 }
 
 .game-text h3{
@@ -88,8 +113,14 @@ main {
 }
 
 .game-details li {
-  display: inline;
-  padding: 10px;
+  display: inline-block;
+  padding: 10px 0px;
+  text-align: center;
+  width: 30%;
+}
+
+.game-details li:nth-child(2) {
+  padding: 10px 0px;
 }
 
 #nav {
@@ -99,34 +130,166 @@ main {
   width: 100%;
   margin: 0px;
   border-bottom: 2px solid black;
-  padding: 10px;
+  padding: 10px 0px 10px 0px;
   list-style: none;
   background-color: #6c71c4;
   font-size: 16pt;
   box-shadow: 5px 5px 15px #000;
 }
 
-.title{
-  font-weight: bold;
-}
-
 #nav a {
   text-decoration: none;
+  display: inline-block;
   color: black;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-#nav li:nth-child(2) {
+#nav a:hover{
+  color: pink;
+}
+
+#nav a:nth-child(2) {
   border-left: solid 2px black;
   border-right: solid 2px black;
 }
 
-#nav li {
-  display:inline;
-  padding-left: 10px;
-  padding-right: 10px;
+.title {
+  font-weight: bold;
+  margin-left: 10px;
 }
 
 .game-details li:nth-child(2) {
   border-right: solid 2px #073642;
   border-left: solid 2px #073642;
+}
+
+table {
+  margin: 0px auto;
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  color: #93a1a1;
+}
+
+#show-table th {
+  color: #000;
+}
+
+#show-table {
+  margin-bottom: 10px;
+}
+
+.comments .text-area {
+  text-align: center;
+}
+
+textarea {
+  width: 60%;
+  height: 100px;
+}
+
+.comment {
+  padding: 30px 0px;
+  border-bottom: 1px solid black;
+}
+
+.library {
+  min-height: 300px;
+}
+
+.lib-item {
+  display: inline-block;
+  text-align: center;
+  margin: 10px;
+  width: 22%;
+}
+
+.lib-item .img-thumb {
+  width: 100%;
+  margin: 0 auto 5px auto;
+}
+
+
+input {
+  width: 40%;
+  padding: 12px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 15px;
+}
+
+label {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: right;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+fieldset {
+  text-align: center;
+}
+
+fieldset div {
+  padding: 5px;
+}
+
+input:focus, textarea:focus {
+  background-color: lightblue;
+}
+
+.button {
+    background-color: #4CAF50;
+    vertical-align: top;
+    display: inline-block;
+    width: 35%;
+    min-width: 150px;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 5px 2px;
+    cursor: pointer;
+    font-size: 2ex;
+}
+
+.login-header {
+  text-align: center;
+}
+
+.view-categories {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  font-size: 1.4em;
+  padding: 5px 10px 5px 10px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+
+#categories-list {
+    height: 500px; /*your fixed height*/
+    -webkit-column-count: 3;
+       -moz-column-count: 3;
+            column-count: 3; /*3 in those rules is just placeholder -- can be anything*/
+}
+
+#categories-list li {
+    display: inline-block; /*necessary*/
+    padding-bottom: 10px;
 }
