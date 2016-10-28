@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
+      flash[:alert] = "Welcome #{@user.username}!"
       session[:user_id] = @user.id
       redirect_to '/'
     else
@@ -16,7 +17,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    p "!!!!!!!!!!!!!!!!!!!!!!!!"
+    flash[:alert] = "You've successfully logged out"
     session[:user_id] = nil
     redirect_to '/games'
   end
