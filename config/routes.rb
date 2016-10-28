@@ -3,11 +3,13 @@ Rails.application.routes.draw do
   get '/sessions/new' => "sessions#new", as: "new_session"
   post '/sessions' => "sessions#create", as: "session"
   delete '/logout' => "sessions#destroy", as: "logout"
+  post '/friendships' => "friendships#create"
 
   resources :users
   # resources :sessions, except: [:destroy]
   resources :games
   resources :categories
+
 
   resources :libraries, only: [:create, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
