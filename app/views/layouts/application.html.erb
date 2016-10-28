@@ -21,6 +21,14 @@
   </div>
 </header>
 
+<% if flash[:error_object] %>
+  <section class="errors">
+    <% flash[:error_object].errors.full_messages.each do |error| %>
+      <%= flash[:error_object].class %>: <%= error %>
+    <% end %>
+  </section
+<% end %>
+
 <main>
 <%= yield %>
 </main>
