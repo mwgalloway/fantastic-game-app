@@ -1,13 +1,17 @@
-<h1>Register a New Account</h1>
-  <% if @user.errors.any? %>
-    <h3>Something went wrong:</h3>
-    <ul>
-      <% @user.errors.full_messages.each do |error| %>
-        <li><%= error %></li>
-      <% end %>
-    </ul>
-  <% end %>
-  <%= form_for @user do |f| %>
+<h1 class="login-header">Register a New Account</h1>
+
+<% if @user.errors.any? %>
+  <h3>Something went wrong:</h3>
+  <ul>
+    <% @user.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @user do |f| %>
+  <fieldset>
+    <legend>Account Creation:</legend>
     <div>
       <%= f.label :username %><br>
       <%= f.text_field :username %>
@@ -25,6 +29,7 @@
       <%= f.password_field :password_confirmation %>
     </div><br>
     <div>
-      <%= f.submit "register" %>
+      <%= f.submit "register", class: "button" %>
     </div>
-  <% end %>
+  </fieldset>
+<% end %>

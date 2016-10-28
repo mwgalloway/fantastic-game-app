@@ -1,11 +1,18 @@
-<h3> Login </h3>
+<h1 class="login-header"> Login </h1>
 
 <%= @error if @error %>
 
 <%= form_tag session_path do %>
-  <%= label_tag(:username) %><br>
-  <%= text_field_tag(:username) %><br>
-  <%= label_tag(:password) %><br>
-  <%= password_field_tag(:password) %><br>
-  <%= submit_tag("Login") %>
+  <fieldset>
+    <legend>Login Information:</legend>
+    <div>
+      <%= label_tag(:username) %><br>
+      <%= text_field_tag(:username) %>
+    </div>
+    <div>
+      <%= label_tag(:password) %><br>
+      <%= password_field_tag(:password) %>
+    </div>
+    <%= submit_tag("Login", class: "button") %>
+  </fieldset>
 <% end %>
