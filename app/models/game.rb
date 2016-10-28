@@ -13,7 +13,7 @@ class Game < ActiveRecord::Base
   has_many :comments
 
   def view_description
-    self.description.gsub(/&#10;/, ' ').gsub(/&nbsp;/, ' ').gsub(/&quot;/, '"').gsub(/&amp;/, '&').gsub(/&rsquo;/, "'").gsub(/&ldquo;/, '"').gsub(/&rdquo;/, '"').gsub(/&ouml;/, 'o')
+    self.description.gsub(/&#10;/, ' ').gsub(/&nbsp;/, ' ').gsub(/&quot;/, '"').gsub(/&amp;/, '&').gsub(/&rsquo;/, "'").gsub(/&ldquo;/, '"').gsub(/&rdquo;/, '"').gsub(/&ouml;/, 'o').gsub(/&mdash;/, '--').gsub(/&ndash;/, '-')
   end
 
   def view_duration

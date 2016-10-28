@@ -1,5 +1,9 @@
 <div class="games-list">
   <%= link_to 'View all Categories', categories_path, class: "view-categories" %>
+  <h2>Most Popular Games</h2>
+</div>
+
+<div class="index-header">
 </div>
 
 <div class="games-list">
@@ -10,7 +14,7 @@
         <h3><%= link_to game.name, game %></h3>
         <p class="players rank">Ranked #<%= game.popularity %> in popularity</p>
         <span class="players"><%= game.min_players %> to <%= game.max_players %> players</span>
-        <p><%= truncate(game.description, length: 150) %><%= link_to 'see more', game %> </p>
+        <p><%= truncate(game.view_description, length: 150) %><%= link_to 'see more', game %> </p>
         <table>
           <tr>
             <th colspan="<%= game.categories.length %>">Categories:</th>
