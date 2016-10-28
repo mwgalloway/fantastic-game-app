@@ -5,22 +5,23 @@
 <div class="games-list">
   <% @games.each do |game| %>
     <div class="game-item">
-      <%= image_tag game.img_url, class: "img-thumb" %>
-        <div class="game-text">
-          <h3><%= link_to game.name, game %></h3>
-          <span class="players"><%= game.min_players %> to <%= game.max_players %> players</span>
-          <p><%= truncate(game.description, length: 150) %><%= link_to 'see more', game %> </p>
-          <table>
-            <tr>
-              <th colspan="<%= game.categories.length %>">Categories:</th>
-            </tr>
-            <tr>
-              <% game.categories.each do |category| %>
-                <td><%= link_to category.name, category %></td>
-              <% end %>
-            </tr>
-          </table>
+      <%= link_to image_tag(game.img_url, class: "img-thumb"), game %>
+      <div class="game-text">
+        <h3><%= link_to game.name, game %></h3>
+        <span class="players"><%= game.min_players %> to <%= game.max_players %> players</span>
+        <p><%= truncate(game.description, length: 150) %><%= link_to 'see more', game %> </p>
+        <table>
+          <tr>
+            <th colspan="<%= game.categories.length %>">Categories:</th>
+          </tr>
+          <tr>
+            <% game.categories.each do |category| %>
+              <td><%= link_to category.name, category %></td>
+            <% end %>
+          </tr>
+        </table>
       </div>
     </div>
   <% end %>
 </div>
+
