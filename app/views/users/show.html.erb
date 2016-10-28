@@ -28,12 +28,14 @@
 <% if logged_in? %>
   <% if current_user.friend?(@user) || @user == current_user %>
       <h2>Game Library:</h2>
-      <ul class="library">
+      <div class="library">
         <% @user.games.each do |game| %>
-          <li class="lib-name"><%= game.name %></li>
-          <li class="lib-thumb"><%= link_to image_tag(game.img_url), game %></li>
+          <div class="lib-item">
+            <%= link_to image_tag(game.img_url, class: "img-thumb"), game %>
+            <span class="lib-name"><%= link_to game.name, game %></span>
+          </div>
         <% end %>
-      </ul>
+      </div>
   <% end %>
 <% end %>
 
