@@ -3,7 +3,7 @@ class FriendshipsController < ApplicationController
   before_action :authenticate
 
   def index
-    @pending_friends = current_user.pending_friends
+    @friend_requests = current_user.friend_requests
   end
 
   def create
@@ -14,5 +14,9 @@ class FriendshipsController < ApplicationController
   end
 
   def update
+    p current_user
+    p User.find(params[:friend_id])
+    current_user.confirm_friend(User.find(params[:friend_id]))
+    redirect_to User.find(params[:friend_id])
   end
 end

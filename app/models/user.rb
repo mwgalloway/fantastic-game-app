@@ -34,6 +34,7 @@ class User < ActiveRecord::Base
 
   def confirm_friend(user)
     friendship = inverse_friendships.find{|friendship| friendship.user == user}
+    p friendship
     friendship.confirmed = true
     friendship.save
   end

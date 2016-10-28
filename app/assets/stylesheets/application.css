@@ -297,3 +297,9 @@ input:focus, textarea:focus {
     display: inline-block; /*necessary*/
     padding-bottom: 10px;
 }
+
+.col-2 {
+  display: inline-block;
+  vertical-align: text-top;
+  padding: 0px 10px ;
+}
