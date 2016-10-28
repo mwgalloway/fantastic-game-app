@@ -1,15 +1,40 @@
 <h1 class="page-header"><%= @user.username %></h1>
+
 <ul class="user-info">
   <li>member since <%= time_ago_in_words(@user.created_at) %> ago</li>
   <li>total games in library: <%= @user.games.count %></li>
 </ul>
-<div id="add-friendship">
 
+<div id="add-friendship">
+  <% if logged_in? %>
+    <% if @user != current_user && !current_user.pending_friends.include?(@user) && !current_user.friend?(@user) %>
+      <%= button_to 'Friend this user', friendships_path(id: @user.id) %>
+    <% elsif current_user.pending_friends.include?(@user) %>
+      <p> <button>Friend request pending</button> </p>
+    <% elsif current_user.friend?(@user) %>
+      <p> You are friends with <%= @user.username %></p>
+    <% end %>
+  <% end %>
 </div>
-  <ul class="library">
-    <% @user.games.each do |game| %>
-      <li class="lib-name"><%= game.name %></li>
-      <li class="lib-thumb"><%= link_to image_tag(game.img_url), game %></li>
+<% if @user == current_user %>
+  <h2>Friends:</h2>
+  <ul class="friends-list">
+    <% @user.friends.each do |friend| %>
+      <li><%= link_to "#{friend.username}", friend %></li>
     <% end %>
   </ul>
+<% end %>
+
+<% if logged_in? %>
+  <% if current_user.friend?(@user) || @user == current_user %>
+      <h2>Game Library:</h2>
+      <ul class="library">
+        <% @user.games.each do |game| %>
+          <li class="lib-name"><%= game.name %></li>
+          <li class="lib-thumb"><%= link_to image_tag(game.img_url), game %></li>
+        <% end %>
+      </ul>
+  <% end %>
+<% end %>
+
 

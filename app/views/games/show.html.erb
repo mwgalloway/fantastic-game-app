@@ -15,6 +15,16 @@
     <li>Players: <%= @game.min_players %> to <%= @game.max_players %> </li>
     <li>Top 50 rank: <%= @game.popularity %> </li>
   </ul>
+  <table>
+    <tr>
+      <th colspan="<%= @game.categories.length %>">Categories:</th>
+    </tr>
+    <tr>
+      <% @game.categories.each do |category| %>
+        <td><%= link_to category.name, category %></td>
+      <% end %>
+    </tr>
+  </table>
 </section>
 
 <section class="comments">
