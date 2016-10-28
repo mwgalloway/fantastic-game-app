@@ -9,13 +9,16 @@ class FriendshipsController < ApplicationController
   def create
     @user_in_view = User.find_by(id: params[:id])
     @friendship = Friendship.create(user_id: current_user.id, friend_id: params[:id])
+    flash[:alert] = "Sent friend request to #{@user_in_view.username}!"
 
     redirect_to @user_in_view
   end
 
   def update
-    current_user.confirm_friend(User.find(params[:friend_id]))
-    redirect_to User.find(params[:friend_id])
+    friend = User.find(params[:friend_id])
+    current_user.confirm_friend(friend)
+    flash[:alert] = "Confirmed #{friend.username}'s friendship!"
+    redirect_to User.find(friend)
   end
 
   def destroy
