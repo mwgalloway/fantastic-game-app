@@ -1,0 +1,11 @@
+<div class="pending-friends">
+  <% if @pending_friends && !@pending_friends.empty? %>
+    <ul>
+      <% @pending_friends.each do |request| %>
+        <li><%= link_to request.username, request %> <%= button_to("accept friend request", friendships_path(friend_id: request.id), method: "patch" )%> </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+
+</div>
