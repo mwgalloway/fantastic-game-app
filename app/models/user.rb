@@ -47,4 +47,9 @@ class User < ActiveRecord::Base
   def friend?(user)
     friends.include?(user)
   end
+
+  def common_friends(game)
+    self.friends.select { |friend| friend.games.include? game }
+  end
+
 end

@@ -6,6 +6,15 @@
     <% else %>
       <%= button_to 'Add this game to your library', libraries_path(game_id: @game.id) %>
     <% end %>
+    <section class="friends-in-common">
+      <% if current_user %>
+        <p><%= current_user.common_friends(@game).length  %> of your friends like this game </p>
+        <ul>
+        <% current_user.common_friends(@game).each do |friend|  %>
+        <li> <%= friend.username %>
+        <% end %>
+      <% end %>
+    </section>
 
     <section class="game">
       <%= image_tag @game.img_url, class: "img-show" %>
@@ -31,8 +40,8 @@
     </table><hr>
 
     <section class="comments">
-      <%= render @game.comments %><hr>
       <%= render partial: 'comments/form' %>
+      <%= render @game.comments %><hr>
     </section><hr>
   </div>
 </div>
