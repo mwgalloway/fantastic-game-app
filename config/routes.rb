@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   resources :users
   # resources :sessions, except: [:destroy]
-  resources :games
+  resources :games do
+    resources :comments
+  end
   resources :categories
 
   resources :libraries, only: [:create, :destroy]

@@ -8,8 +8,8 @@
 </head>
 <body>
 <header>
-  <h1 class="site-title">FUN GAMES</h1>
-  <ul>
+  <ul id="nav">
+    <li class="title">FANTASTIC GAMES</li>
     <% if !logged_in? %>
       <li><%= link_to "register", new_user_path %></li>
       <li><%= link_to "log in", new_session_path %></li>

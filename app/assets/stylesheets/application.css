@@ -63,6 +63,7 @@ main {
 }
 
 .game-item {
+  border: thick solid #002b36;
   margin-top: 30px;
   padding: 20px;
   overflow: auto;
@@ -90,6 +91,36 @@ main {
   display: inline;
   padding: 10px;
 }
+
+#nav {
+  margin:0;
+  padding:10px;
+  list-style: none;
+  background-color: #6c71c4;
+  font-size: 16pt;
+}
+
+.title{
+  font-weight: bold;
+}
+
+#nav a {
+  text-decoration: none;
+  color: black;
+}
+
+#nav li:nth-child(2) {
+  border-left: solid 2px black;
+  border-right: solid 2px black;
+}
+
+#nav li {
+  display:inline;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
 
 .game-details li:nth-child(2) {
   border-right: solid 2px #073642;
