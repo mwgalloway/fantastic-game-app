@@ -1,5 +1,5 @@
 # fantastic-game-app
-[live app](http://peaceful-sierra-68868.herokuapp.com)
+[live app](http://peaceful-sierra-68868.herokuapp.com) [![Build Status](https://travis-ci.org/lauframo/fantastic-game-app.svg?branch=master)](https://travis-ci.org/lauframo/fantastic-game-app)
 
 ##Purpose
 To create a fun and easy-to-use online hub for board enthusiasts where they can access the most popular games, share their knowledge, showcase their own game library and connect with fellow enthusiasts.
