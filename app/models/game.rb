@@ -26,7 +26,19 @@ class Game < ActiveRecord::Base
     end
   end
 
-  def self.order_by_rank
+  def self.order_by_rank_asc
     Game.all.order(:popularity)
+  end
+
+  def self.order_by_rank_desc
+    Game.all.order(popularity: :desc)
+  end
+
+  def self.order_by_name_asc
+    Game.all.order(:name)
+  end
+
+  def self.order_by_name_desc
+    Game.all.order(name: :desc)
   end
 end
