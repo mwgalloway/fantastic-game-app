@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to '/'
     else
-      @error = "Username and/or password don't match"
+      flash[:error] = "Username and/or password don't match"
       render 'new'
     end
   end
