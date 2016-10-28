@@ -33,12 +33,12 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 gem 'pry'
 gem 'bgg'
+gem 'faker'
 
 group :development, :test do
   gem 'rspec-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'faker'
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'simplecov', :require => false
