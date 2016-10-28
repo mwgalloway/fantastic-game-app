@@ -27,9 +27,15 @@
 <% if flash[:error_object] %>
   <section class="errors">
     <% flash[:error_object].errors.full_messages.each do |error| %>
-      <%= flash[:error_object].class %>: <%= error %>
+      <%= flash[:error_object].class %>: <%= error %><br>
     <% end %>
-  </section
+  </section>
+<% end %>
+
+<% if flash[:error] %>
+  <section class="errors">
+    <%= flash[:error] %>
+  </section>
 <% end %>
 
 <% if flash[:alert] %>

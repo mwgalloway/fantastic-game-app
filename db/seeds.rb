@@ -104,3 +104,4 @@ end
   user.friendships.create(user_id: user.id, friend_id: friend.id, confirmed: true)
 
 end
+
