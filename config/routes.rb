@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/friendships' => "friendships#index"
   post '/friendships' => "friendships#create"
   patch '/friendships' => "friendships#update"
+  delete '/friendships' => "friendships#destroy"
 
   resources :users
 

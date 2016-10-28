@@ -38,6 +38,12 @@ class User < ActiveRecord::Base
     friendship.save
   end
 
+  def delete_friend(friend)
+    friendship = friendships.find{ |friendship| friendship.user == user }
+    friendship.confirmed = false
+    friendship.save
+  end
+
   def friend?(user)
     friends.include?(user)
   end

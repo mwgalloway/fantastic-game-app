@@ -4,7 +4,7 @@
     <% if @friend_requests && !@friend_requests.empty? %>
 
       <% @friend_requests.each do |request| %>
-        <li><%= link_to request.username, request %> <%= button_to("accept friend request", friendships_path(friend_id: request.id), method: "patch" )%> </li>
+        <li><%= link_to request.username, request %> <%= button_to("accept", friendships_path(friend_id: request.id), method: "patch" )%> <%= button_to("deny", friendships_path(friend_id: request.id), method: "delete") %> </li>
       <% end %>
     </ul>
   <% end %>
