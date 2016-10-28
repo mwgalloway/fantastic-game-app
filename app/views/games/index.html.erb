@@ -1,5 +1,4 @@
 <div class="games-list">
-  <%= link_to 'View all Categories', categories_path, class: "view-categories" %>
   <% case @sort %>
   <% when "rank_asc" %>
     <h2>Games by Popularity Asc</h2>
@@ -14,10 +13,13 @@
 
 <div class="order-by">
   <%= form_for(games_path, method: :get) do |f| %>
-    <!-- <span>Sort by:</span> -->
-    <%= f.label :sort_by %>
-    <%= select_tag(:sort_by, options_for_select([['Popularity Asc', 1], ['Popularity Desc', 2], ['Alphabetically Asc', 3], ['Alphabetically Desc', 4]])) %>
-    <%= f.submit "Go", class: "order-button" %>
+    <div class="order-div">
+      <%= f.label :sort_by %>
+      <%= select_tag(:sort_by, options_for_select([['Popularity Asc', 1], ['Popularity Desc', 2], ['Alphabetically Asc', 3], ['Alphabetically Desc', 4]])) %>
+    </div>
+    <div class="order-div">
+      <%= f.submit "Go", id: "order-button" %>
+    </div>
   <% end %>
 </div>
 
