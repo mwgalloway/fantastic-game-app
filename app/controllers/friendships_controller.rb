@@ -14,8 +14,6 @@ class FriendshipsController < ApplicationController
   end
 
   def update
-    p current_user
-    p User.find(params[:friend_id])
     current_user.confirm_friend(User.find(params[:friend_id]))
     redirect_to User.find(params[:friend_id])
   end
