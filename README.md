@@ -1,11 +1,8 @@
 # fantastic-game-app
+[peaceful-sierra-68868.herokuapp.com](live app)
 
 ##Purpose
 To create a fun and easy-to-use online hub for board enthusiasts where they can access the most popular games, share their knowledge, showcase their own game library and connect with fellow enthusiasts.
-
-##Getting Started
-
-
 
 
 ##Dependencies
@@ -24,23 +21,4 @@ Gems:
 - pry (0.10.0)
 - bgg
 - coderay (1.1.0)
-
-##Configuration Instructions
-1. Disable coffe_rails.
-  *Comment out or remove from your gemfile
-    gem "coffee-script"
-
-2. Disable Turbolinks
-  *Comment out or remove from your gemfile
-    gem "turbolinks"
-  *Remove from app/assets/javascripts/application.js
-    //= require
-  * Remove from app/views/layouts/application.html.erb.
-    data-turbolinks-track" => true
-
-
-
-
-
-##Examples
-
+- faker
