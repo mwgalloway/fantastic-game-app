@@ -9,12 +9,12 @@
 <body>
 <header>
   <ul id="nav">
-    <li class="title">FANTASTIC GAMES</li>
+    <li class="title"><%= link_to 'FANTASTIC GAMES', games_path %> </li>
     <% if !logged_in? %>
-      <li><%= link_to "register", new_user_path %></li>
+      <li><%= link_to "Register", new_user_path %></li>
       <li><%= link_to "log in", new_session_path %></li>
     <% else %>
-      <li><%= link_to "profile page", current_user %></li>
+      <li><%= link_to "Welcome " + current_user.username, current_user %></li>
       <li><%= link_to "log out", "/logout", method: :delete %></li>
     <% end %>
   </ul>
