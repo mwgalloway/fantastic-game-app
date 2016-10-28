@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   post '/sessions' => "sessions#create", as: "session"
   delete '/logout' => "sessions#destroy", as: "logout"
 
-
+  get '/friendships' => "friendships#index"
   post '/friendships' => "friendships#create"
+  patch '/friendships' => "friendships#update"
 
   resources :users
 
