@@ -16,7 +16,7 @@ hot_list[0..10].each do |item|
   categories_to_add.each { |category| new_game.categories << Category.find_by(name: category["value"]) }
 end
 
-sleep(10)
+sleep(12)
 
 hot_list[11..20].each do |item|
   details = BggApi.thing("id" => item["id"])
@@ -32,7 +32,7 @@ hot_list[11..20].each do |item|
   categories_to_add.each { |category| new_game.categories << Category.find_by(name: category["value"]) }
 end
 
-sleep(10)
+sleep(12)
 
 hot_list[21..30].each do |item|
   details = BggApi.thing("id" => item["id"])
@@ -48,7 +48,7 @@ hot_list[21..30].each do |item|
   categories_to_add.each { |category| new_game.categories << Category.find_by(name: category["value"]) }
 end
 
-sleep(10)
+sleep(12)
 
 hot_list[31..40].each do |item|
   details = BggApi.thing("id" => item["id"])
@@ -64,7 +64,7 @@ hot_list[31..40].each do |item|
   categories_to_add.each { |category| new_game.categories << Category.find_by(name: category["value"]) }
 end
 
-sleep(10)
+sleep(12)
 
 hot_list[41..50].each do |item|
   details = BggApi.thing("id" => item["id"])
