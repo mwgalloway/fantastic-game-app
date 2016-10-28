@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
     @game = @comment.game
 
     if @comment.save
+      flash[:alert] = "Your comment has succesfully been added!"
       redirect_to game_path(@comment.game)
     else
       flash[:error_object] = @comment
