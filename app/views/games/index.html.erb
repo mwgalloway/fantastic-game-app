@@ -8,6 +8,7 @@
       <%= link_to image_tag(game.img_url, class: "img-thumb"), game %>
       <div class="game-text">
         <h3><%= link_to game.name, game %></h3>
+        <p class="players rank">Ranked #<%= game.popularity %> in popularity</p>
         <span class="players"><%= game.min_players %> to <%= game.max_players %> players</span>
         <p><%= truncate(game.description, length: 150) %><%= link_to 'see more', game %> </p>
         <table>
