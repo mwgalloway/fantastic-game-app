@@ -3,7 +3,7 @@
 <div class="games-list">
   <% @category.games.each do |game| %>
     <div class="game-item">
-      <%= image_tag game.img_url, class: "img-thumb" %>
+      <%= link_to image_tag(game.img_url, class: "img-thumb"), game %>
         <div class="game-text">
           <h3><%= link_to game.name, game %></h3>
           <span class="players"><%= game.min_players %> to <%= game.max_players %> players</span>

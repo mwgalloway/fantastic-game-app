@@ -25,4 +25,8 @@ class Game < ActiveRecord::Base
       "#{self.duration / 60} hours"
     end
   end
+
+  def self.order_by_rank
+    Game.all.order(:popularity)
+  end
 end
